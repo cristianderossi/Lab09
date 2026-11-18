@@ -1,7 +1,7 @@
 from database.parco_DAO import ParcoDAO
 from database.escursione_DAO import EscursioneDAO
 from database.punto_interesse_DAO import PuntoInteresseDAO
-from model import escursione, punto_interesse
+
 
 
 class Model:
@@ -15,9 +15,11 @@ class Model:
 
         # TODO: Aggiungere eventuali altri attributi
 
-        self._max_giorni: int = None
-        self._max_budget: int = None
-        self._lista_parchi=[]
+        self._max_giorni = None
+        self._max_budget = None
+        self._escursione_parchi=[]
+
+
 
 
 
@@ -88,12 +90,17 @@ class Model:
 
         # TODO
 
-        self._lista_parchi=[]
+        self._escursione_parchi=[]
         for escursione in self.escursioni_map.values():
 
             if escursione.id_parco == id_parco:
 
-                self._lista_parchi.append(escursione)
+                self._escursione_parchi.append(escursione)
+
+
+
+
+
 
 
 
