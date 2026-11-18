@@ -50,13 +50,13 @@ class Model:
 
         for relazione in relazioni:
 
-            escursione=self.escursioni_map[relazione.id]
+            escursione=self.escursioni_map[relazione["id_escursioni"]]
 
-            punti_interesse=self.punti_interesse_map[relazione.id]
+            punti_interesse=self.punti_interesse_map[relazione['id_punti_interesse']]
 
 
-            escursione.set_punti_interesse(punti_interesse)
-            punti_interesse.set_escursioni(escursione)
+
+
 
 
 
