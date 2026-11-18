@@ -13,6 +13,7 @@ class Model:
 
         # TODO: Aggiungere eventuali altri attributi
 
+
         # Caricamento
         self.load_escursioni()
         self.load_punti_interesse()
@@ -39,6 +40,54 @@ class Model:
             --> Ogni PuntoInteresse ha un set di Escursioni.
         """
         # TODO
+
+        relazioni=EscursioneDAO.get_escursioni_punti_interesse()
+
+        if relazioni is None:
+
+             return
+
+
+        for relazione in relazioni:
+
+            escursione=self.escursioni_map[relazione.id]
+
+            punti_interesse=self.punti_interesse_map[relazione.id]
+
+
+            escursione.set_punti_interesse(punti_interesse)
+            punti_interesse.set_escursioni(escursione)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def genera_pacchetto(self, id_parco: str, max_giorni: int = None, max_budget: float = None):
         """
