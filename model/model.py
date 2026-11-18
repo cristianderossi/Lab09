@@ -61,8 +61,6 @@ class Model:
             punto.escursioni.add(escursioni)
 
 
-
-
     def genera_pacchetto(self, id_parco: str, max_giorni: int = None, max_budget: float = None):
         """
         Calcola il pacchetto di escursioni ottimale per un parco rispettando i vincoli di durata, budget e punti di interesse unici.
@@ -79,6 +77,34 @@ class Model:
         self._valore_ottimo = -1
 
         # TODO
+
+        self.load_escursioni()
+        self.load_punti_interesse()
+        self.load_relazioni()
+
+        lista_pacchetto = []
+        for escursione in self.escursioni_map:
+
+            if id_parco == escursione["id_parco"]:
+
+                lista_pacchetto.append(id_parco)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         return self._pacchetto_ottimo, self._costo, self._valore_ottimo
 
