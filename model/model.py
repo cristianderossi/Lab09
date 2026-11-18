@@ -15,6 +15,12 @@ class Model:
 
         # TODO: Aggiungere eventuali altri attributi
 
+        self._max_giorni: int = None
+        self._max_budget: int = None
+        self._lista_parchi=[]
+
+
+
 
         # Caricamento
         self.load_escursioni()
@@ -82,29 +88,12 @@ class Model:
 
         # TODO
 
-
-
         self._lista_parchi=[]
         for escursione in self.escursioni_map.values():
 
             if escursione.id_parco == id_parco:
 
                 self._lista_parchi.append(escursione)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
