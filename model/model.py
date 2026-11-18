@@ -78,21 +78,14 @@ class Model:
 
         # TODO
 
-        self.load_escursioni()
-        self.load_punti_interesse()
-        self.load_relazioni()
-
-        lista_pacchetto = []
-        for escursione in self.escursioni_map:
-
-            if id_parco == escursione["id_parco"]:
-
-                lista_pacchetto.append(id_parco)
 
 
+        lista_parchi=[]
+        for escursione in self.escursioni_map.values():
 
+            if escursione.id_parco == id_parco:
 
-
+                lista_parchi.append(escursione)
 
 
 
