@@ -76,16 +76,26 @@ class Model:
         self._costo = 0
         self._valore_ottimo = -1
 
+        self._max_giorni = max_giorni
+        self._max_budget = max_budget
+
+
         # TODO
 
 
 
-        lista_parchi=[]
+        self._lista_parchi=[]
         for escursione in self.escursioni_map.values():
 
             if escursione.id_parco == id_parco:
 
-                lista_parchi.append(escursione)
+                self._lista_parchi.append(escursione)
+
+
+
+
+
+
 
 
 
