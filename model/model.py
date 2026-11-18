@@ -57,58 +57,8 @@ class Model:
             punto=self.punti_interesse_map[relazione['id_punto_interesse']]
 
 
-            escursione.punti_interesse.add(punto)
-            punto.escursioni.add(escursione)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            escursioni.punti_interesse.add(punto)
+            punto.escursioni.add(escursioni)
 
 
 
