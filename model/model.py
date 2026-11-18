@@ -1,6 +1,8 @@
 from database.parco_DAO import ParcoDAO
 from database.escursione_DAO import EscursioneDAO
 from database.punto_interesse_DAO import PuntoInteresseDAO
+from model import escursione, punto_interesse
+
 
 class Model:
     def __init__(self):
@@ -50,9 +52,28 @@ class Model:
 
         for relazione in relazioni:
 
-            escursione=self.escursioni_map[relazione["id_escursioni"]]
+            escursioni=self.relazione["id_escursioni"]
 
-            punti_interesse=self.punti_interesse_map[relazione['id_punti_interesse']]
+            punti_interesse=self.relazione['id_punto_interesse']
+
+            escursione.punti_interesse.add(escursioni)
+
+            punto_interesse.escursioni.add(punti_interesse)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
