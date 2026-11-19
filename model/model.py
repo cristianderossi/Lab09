@@ -21,9 +21,6 @@ class Model:
 
 
 
-
-
-
         # Caricamento
         self.load_escursioni()
         self.load_punti_interesse()
