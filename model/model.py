@@ -111,7 +111,7 @@ class Model:
             self._pacchetto_ottimo = pacchetto_parziale.copy()
             self._costo=costo_corrente
 
-            return
+
 
 
         for indice in range(start_index, len(self._escursione_parchi)):
@@ -122,7 +122,7 @@ class Model:
 
                 continue
 
-            if self._max_budget is not None and valore_corrente+escursione.durata_budget > self._max_budget:
+            if self._max_budget is not None and costo_corrente + escursione.costo > self._max_budget:
                 continue
 
             if not punti_usati.isdisjoint(escursione.punti_interesse):
