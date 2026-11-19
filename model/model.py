@@ -131,17 +131,3 @@ class Model:
             if not punti_usati.isdisjoint(escursione.punti_interesse):
                 continue
 
-
-
-
-
-
-
-
-
-
-
-                
-
-
-
