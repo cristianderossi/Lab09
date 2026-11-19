@@ -1,7 +1,7 @@
 from database.parco_DAO import ParcoDAO
 from database.escursione_DAO import EscursioneDAO
 from database.punto_interesse_DAO import PuntoInteresseDAO
-
+from model.escursione import Escursione
 
 
 class Model:
@@ -111,12 +111,37 @@ class Model:
 
         if valore_corrente > self._valore_ottimo:
             self._valore_ottimo = valore_corrente
-            self._pacchetto_ottimo = pacchetto_parziale
+            self._pacchetto_ottimo = pacchetto_parziale.copy()
             self._costo=costo_corrente
 
             return
 
 
-        for indice in range(start_index, len()):
+        for indice in range(start_index, len(self._escursione_parchi)):
+
+            escursione = self._escursione_parchi[indice]
+
+            if self._max_giorni is not None and durata_corrente+escursione.durata_giorni > self._max_giorni:
+
+                continue
+
+            if self._max_budget is not None and valore_corrente+escursione.durata_budget > self._max_budget:
+                continue
+
+            if not punti_usati.isdisjoint(escursione.punti_interesse):
+                continue
+
+
+
+
+
+
+
+
+
+
+
+                
+
 
 
